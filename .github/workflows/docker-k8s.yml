@@ -24,10 +24,10 @@ jobs:
     - name: Push image to Docker Hub
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/node-docker-k8s-demo:latest
 
-    - name: Set up kubectl using kubeconfig
-      run: |
-        echo ${{ secrets.KUBE_CONFIG_DATA }} | base64 -d > ~/.kube/config
-
-    - name: Deploy to Kubernetes
-      run: bash scripts/deploy.sh
+#    - name: Set up kubectl using kubeconfig
+#      run: |
+#        echo ${{ secrets.KUBE_CONFIG_DATA }} | base64 -d > ~/.kube/config
+#
+#   - name: Deploy to Kubernetes
+#      run: bash scripts/deploy.sh
 
